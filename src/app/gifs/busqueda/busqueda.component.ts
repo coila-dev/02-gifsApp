@@ -12,8 +12,19 @@ export class BusquedaComponent{
   buscar(){
     // console.log(this.txtBuscar);
     // console.log(this.txtBuscar.nativeElement.value);
+
     const valor = this.txtBuscar.nativeElement.value;
-    this.gifsService.buscarGifs(valor);
-    this.txtBuscar.nativeElement.value = '';
+    
+    if (valor.trim().length>0) {
+      console.log(this.gifsService.historial.indexOf(valor));
+      
+      if (this.gifsService.historial.indexOf(valor)!=-1) {
+        return;
+      }
+      this.gifsService.buscarGifs(valor);
+      this.txtBuscar.nativeElement.value = '';  
+    }else{
+      return;
+    }
   }
 }
