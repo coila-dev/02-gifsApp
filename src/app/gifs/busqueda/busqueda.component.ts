@@ -18,9 +18,7 @@ export class BusquedaComponent{
     if (valor.trim().length>0) {
       console.log(this.gifsService.historial.indexOf(valor));
       
-      if (this.gifsService.historial.indexOf(valor)!=-1) {
-        return;
-      }
+      
       this.gifsService.buscarGifs(valor);
       this.txtBuscar.nativeElement.value = '';  
     }else{
