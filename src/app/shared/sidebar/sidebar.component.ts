@@ -11,4 +11,9 @@ export class SidebarComponent{
   get historial(){
     return this.gifsService.historial;
   }
+  mostrar(txt:string){
+    console.log(txt);
+    // console.log('carlos');
+    this.gifsService.buscarGifs(txt);
+  }   
 }
